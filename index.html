@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Drag and Drop Game</title>
+    <title>LING Final Project</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
         .category {
-            width: 250px;
-            height: 400px;
-            border: 2px dashed gray;
-            margin: 10px;
+            width: 150px;
+            height: 300px;
+            border: 2px dashed #C8102E;
+            margin: 25px;
             display: inline-block;
         }
 
         .item {
-            width: 150px;
+            width: auto;
             height: 50px;
             background-color: #012169;
             margin: 10px;
@@ -44,13 +44,14 @@
         </div>
     </nav>
     <div class="container">
-        <div id="category1" class="category" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="category2" class="category" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <div id="category3" class="category" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="category1" class="category" ondrop="drop(event)" ondragover="allowDrop(event)">English</div>
+        <div id="category2" class="category" ondrop="drop(event)" ondragover="allowDrop(event)">Chinese</div>
+        <div id="category3" class="category" ondrop="drop(event)" ondragover="allowDrop(event)">Hawaiian</div>
+        <div id="category4" class="category" ondrop="drop(event)" ondragover="allowDrop(event)">Other</div>
 
-        <div id="item1" class="item" draggable="true" ondragstart="drag(event)"></div>
-        <div id="item2" class="item" draggable="true" ondragstart="drag(event)"></div>
-        <div id="item3" class="item" draggable="true" ondragstart="drag(event)"></div>
+        <div id="item1" class="item" draggable="true" ondragstart="drag(event)">Sentence 1</div>
+        <div id="item2" class="item" draggable="true" ondragstart="drag(event)">Sentence 2</div>
+        <div id="item3" class="item" draggable="true" ondragstart="drag(event)">Sentence 3</div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
