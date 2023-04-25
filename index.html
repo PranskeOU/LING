@@ -88,6 +88,10 @@
 
         function drop(event) {
             event.preventDefault();
+            const rect = item.getBoundingClientRect();
+            item.style.position = "absolute";
+            item.style.left = rect.left + "px";
+            item.style.top = rect.top + "px";
             var item = event.dataTransfer.getData("text");
             event.target.appendChild(document.getElementById(item));
             var targetCategory = event.target.id;
