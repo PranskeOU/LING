@@ -90,9 +90,11 @@
             event.preventDefault();
             var item = event.dataTransfer.getData("text");
             event.target.appendChild(document.getElementById(item));
+            console.log(event.target.appendChild(document.getElementById(item)));
             var targetCategory = event.target.id;
-            var correctCategory = item.getAttribute("name"));
-            console.log(item, targetCategory, correctCategory);
+            //var correctCategory = item.getAttribute("name"));
+            console.log(item, targetCategory, //correctCategory
+                       );
             if (targetCategory == correctCategory){
                 item.style.backgroundColor = "green";
             }
