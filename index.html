@@ -162,6 +162,13 @@
     function hideHoverText(event) {
         event.target.querySelector(".hovertext").style.visibility = "hidden";
     }
+        
+    function dragEnd(event) {
+        var element = document.getElementById(draggedItemId);
+        element.style.opacity = "1";
+        event.target.classList.remove("over");
+        element.setAttribute("draggable", "true"); // set draggable back to true
+}
 </script>
 </body>
 </html>
