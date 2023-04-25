@@ -103,19 +103,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
+    var draggedItemId;
+
+    function dragStart(event) {
+        event.dataTransfer.setData("text", event.target.id);
+        draggedItemId = event.target.id;
+    }
+
     function allowDrop(event) {
         event.preventDefault();
     }
 
-    function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
-    }
-
     function drop(event) {
         event.preventDefault();
-        var data = event.dataTransfer.getData("text");
-        var element = document.getElementById(data);
-
+        var element = document.getElementById(draggedItemId);
         if (event.target.id == "category1" && (element.id == "item3" || element.id == "item7")) {
             element.style.backgroundColor = "green";
             element.setAttribute("draggable", "false");
@@ -154,12 +155,12 @@
         }
     }
 
-    function showHoverText(event, category) {
-        var categoryElement = document.getElementById(category);
-        var hovertextElement = categoryElement.querySelector(".hovertext");
-        if (hovertextElement.innerHTML != "") {
-            hovertextElement.style.visibility = "visible";
-        }
+    function showHoverText(event) {
+        event.target.querySelector(".hovertext").style.visibility = "visible";
+    }
+
+    function hideHoverText(event) {
+        event.target.querySelector(".hovertext").style.visibility = "hidden";
     }
 </script>
 </body>
