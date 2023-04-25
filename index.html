@@ -70,6 +70,8 @@
         <div id="item6" class="item" draggable="true" ondragstart="drag(event)">Ono da <b>malasadaz</b>.</div> <!-- A fried dough ball -> Portuguese -->
         <div id="item7" class="item" draggable="true" ondragstart="drag(event)"><b>Ste chraing fo ak lokol.</b></div> <!--"He's trying to act local" -> English -->
         <div id="item8" class="item" draggable="true" ondragstart="drag(event)"><b>Char siu</b></div> <!-- "Barbequed pork" -> Cantonese -->
+    </br>
+        <button onclick="checkAnswers()">Check Answers</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -97,6 +99,25 @@
             element.setAttribute("draggable", "true"); // set draggable back to true
         }
         
-</script>
-</body>
+        function checkAnswers() {
+           const answerKey = {
+             "Category1": ["item3", "item7"],
+             "Category2": ["item4", "item8"],
+             "Category3": ["item2"],
+             "Category4": ["item1", "item6"],
+             "Category5": ["item5"]
+           };
+           const items = document.getElementsByTagName("li");
+           for (let item of items) {
+             const category = item.dataset.category;
+             const itemId = item.getAttribute("id");
+             if (answerKey[category].includes(itemId)) {
+               item.style.backgroundColor = "green";
+             } else {
+               item.style.backgroundColor = "red";
+             }
+           }
+         }
+        </script>
+    </body>
 </html>
