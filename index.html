@@ -90,7 +90,7 @@
             event.preventDefault();
             var data = event.dataTransfer.getData("text");
             event.target.appendChild(document.getElementById(data));
-            console.log("${data}");
+            console.log(data);
         }
         
         function dragEnd(event) {
