@@ -99,10 +99,6 @@
             else {
                 document.getElementById(item).style.background = "red";
             }
-            const rect = item.getBoundingClientRect();
-            item.style.position = "absolute";
-            item.style.left = rect.left + "px";
-            item.style.top = rect.top + "px";
         }
         
         function dragEnd(event) {
