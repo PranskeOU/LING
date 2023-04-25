@@ -90,8 +90,15 @@
             event.preventDefault();
             var item = event.dataTransfer.getData("text");
             event.target.appendChild(document.getElementById(item));
-            var category = event.target.id;
-            console.log(item, category);
+            var targetCategory = event.target.id;
+            var correctCategory = event.target.appendChild(document.getElementByName(item));
+            console.log(item, targetCategory, correctCategory);
+            if (targetCategory == correctCategory){
+                item.style.backgroundColor = "green";
+            }
+            else {
+                item.style.backgroundColor = "red";
+            }
         }
         
         function dragEnd(event) {
@@ -100,20 +107,6 @@
             event.target.classList.remove("over");
             element.setAttribute("draggable", "true"); // set draggable back to true
         }
-        
-        function checkAnswers() {
-           const elements = document.getElementsByTagName("div");
-           const items = [];
-           for (let item of items) {
-             const category = item.id;
-             const itemId = item.getAttribute("id");
-             if (answerKey[category].includes(itemId)) {
-               item.style.backgroundColor = "green";
-             } else {
-               item.style.backgroundColor = "red";
-             }
-           }
-         }
         </script>
     </body>
 </html>
