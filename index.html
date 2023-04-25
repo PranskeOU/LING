@@ -94,10 +94,10 @@
             var correctCategory = document.getElementById(item).getAttribute("name");
             console.log(item, targetCategory, correctCategory);
             if (targetCategory == correctCategory){
-                document.body.style.background = "green";
+                document.getElementById(item).style.background = "green";
             }
             else {
-                document.body.style.background = "red";
+                document.getElementById(item).style.background = "red";
             }
         }
         
