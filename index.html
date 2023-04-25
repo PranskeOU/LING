@@ -89,7 +89,7 @@
         function drop(event) {
             event.preventDefault();
             var item = event.dataTransfer.getData("text");
-            event.target.appendChild(document.getElementById(data));
+            event.target.appendChild(document.getElementById(item));
             var category = event.target.id;
             console.log(item, category);
         }
