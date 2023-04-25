@@ -109,7 +109,7 @@
            };
            const items = document.getElementsByTagName("div");
            for (let item of items) {
-             const category = item.dataset.category;
+             const category = item.id;
              const itemId = item.getAttribute("id");
              if (answerKey[category].includes(itemId)) {
                item.style.backgroundColor = "green";
