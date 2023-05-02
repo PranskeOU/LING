@@ -79,9 +79,11 @@
         <div id="item2" name="category3" class="item" draggable="true" ondragstart="drag(event)">2. Hiz haus ste da
             <b>mauka</b> said.
         </div> <!-- "His house is on the mountainside" -> Hawaiian -->
-        <div id="item3" name="category1" class="item" draggable="true" ondragstart="drag(event)"><b>3. Buckaloose</b></div>
+        <div id="item3" name="category1" class="item" draggable="true" ondragstart="drag(event)"><b>3. Buckaloose</b>
+        </div>
         <!-- "Go crazy" -> English -->
-        <div id="item4" name="category2" class="item" draggable="true" ondragstart="drag(event)">4. Nomo <b>kaukau</b> in
+        <div id="item4" name="category2" class="item" draggable="true" ondragstart="drag(event)">4. Nomo <b>kaukau</b>
+            in
             da haus</div> <!-- from 'chow chow' -> Cantonese -->
         <div id="item5" name="category5" class="item" draggable="true" ondragstart="drag(event)">5. <b>Bachi</b></div>
         <!-- "Punishment/Retaliation" -> Japanese -->
@@ -90,7 +92,8 @@
         </div> <!-- A fried dough ball -> Portuguese -->
         <div id="item7" name="category1" class="item" draggable="true" ondragstart="drag(event)">7. <b>Ste chraing fo ak
                 lokol.</b></div> <!--"He's trying to act local" -> English -->
-        <div id="item8" name="category2" class="item" draggable="true" ondragstart="drag(event)">8. <b>Char siu</b></div>
+        <div id="item8" name="category2" class="item" draggable="true" ondragstart="drag(event)">8. <b>Char siu</b>
+        </div>
         <!-- "Barbequed pork" -> Cantonese -->
     </div>
     </br>
@@ -154,10 +157,13 @@
     <script>
         function toggleAnswers() {
             var x = document.getElementById("answers");
+            var btn = document.getElementById("answerButton");
             if (x.style.display === "none") {
                 x.style.display = "block";
+                btn.innerHTML = "Hide Answers";
             } else {
                 x.style.display = "none";
+                btn.innerHTML = "Show Answers";
             }
         }
         function allowDrop(event) {
