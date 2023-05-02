@@ -74,6 +74,15 @@
         <div id="item8" name="category2" class="item" draggable="true" ondragstart="drag(event)"><b>Char siu</b></div> <!-- "Barbequed pork" -> Cantonese -->
 </div>
 </br>
+<div class="container" style="text-align:center">
+    <button onclick="toggleAnswers()">Show Answers</button>
+<div id="answers" style="display:none;">
+  <p>Answer 1</p>
+  <p>Answer 2</p>
+  <p>Answer 3</p>
+</div>
+</div>
+</br>
 <div class="container" style="text-align:left">
     <b>Sources:</b>
     </br>
@@ -91,6 +100,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
+        function toggleAnswers() {
+            var x = document.getElementById("answers");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
         function allowDrop(event) {
             event.preventDefault();
         }
